@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Firyal Travels — A Journal of Places</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  background:#f8f6f0;
+  color:#302f29;
+  font-family:'DM Sans',sans-serif;
+}
+nav {
+  height:85px;
+  padding:0 7%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo {
+  font-family:'Playfair Display',serif;
+  font-size:25px;
+}
+nav a {
+  text-decoration:none;
+  color:#302f29;
+  font-size:11px;
+  letter-spacing:1.5px;
+  margin-left:25px;
+}
+.hero {
+  margin:0 3%;
+  height:620px;
+  background:linear-gradient(#0003,#0004),
+  url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=2000') center/cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+}
+.hero p {
+  font-size:11px;
+  letter-spacing:5px;
+  margin-bottom:25px;
+}
+.hero h1 {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(48px,8vw,92px);
+  font-weight:400;
+  line-height:1.1;
+}
+.hero a {
+  display:inline-block;
+  margin-top:35px;
+  padding:15px 30px;
+  border:1px solid white;
+  color:white;
+  text-decoration:none;
+  font-size:10px;
+  letter-spacing:2px;
+}
+section { padding:100px 9%; }
+.eyebrow {
+  color:#82836c;
+  font-size:10px;
+  letter-spacing:3px;
+  margin-bottom:17px;
+}
+h2 {
+  font-family:'Playfair Display',serif;
+  font-size:45px;
+  font-weight:400;
+  margin-bottom:20px;
+}
+.description {
+  max-width:580px;
+  color:#77766f;
+  line-height:1.9;
+  font-size:14px;
+}
+.grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+  margin-top:45px;
+}
+.place img {
+  width:100%;
+  height:370px;
+  object-fit:cover;
+  display:block;
+  transition:transform .5s;
+}
+.place { overflow:hidden; }
+.place img:hover { transform:scale(1.04); }
+.place h3 {
+  font-family:'Playfair Display',serif;
+  font-size:25px;
+  font-weight:400;
+  margin-top:18px;
+}
+.place p {
+  color:#88877f;
+  font-size:10px;
+  letter-spacing:2px;
+  margin-top:8px;
+}
+.journal {
+  background:#eeece4;
+}
+.story {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
+  margin-top:40px;
+}
+.story img {
+  width:100%;
+  height:400px;
+  object-fit:cover;
+}
+.story h3 {
+  font-family:'Playfair Display',serif;
+  font-size:32px;
+  font-weight:400;
+  margin-bottom:18px;
+}
+.story p {
+  color:#77766f;
+  font-size:14px;
+  line-height:1.9;
+}
+.about {
+  text-align:center;
+}
+.about .description {
+  margin:auto;
+}
+footer {
+  text-align:center;
+  padding:40px 15px;
+  border-top:1px solid #e5e2d9;
+  font-size:10px;
+  letter-spacing:2px;
+  color:#77766f;
+}
+@media(max-width:700px) {
+  nav { padding:0 5%; height:75px; }
+  .logo { font-size:20px; }
+  nav a { margin-left:10px; font-size:9px; }
+  .hero { height:480px; margin:0 2%; }
+  section { padding:70px 7%; }
+  h2 { font-size:36px; }
+  .grid { grid-template-columns:1fr; gap:35px; }
+  .place img { height:330px; }
+  .story { grid-template-columns:1fr; gap:25px; }
+  .story img { height:300px; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">Firyal Travels.</div>
+  <div>
+    <a href="#destinations">PLACES</a>
+    <a href="#journal">JOURNAL</a>
+    <a href="#about">ABOUT</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div>
+    <p>A LITTLE JOURNAL OF PLACES & MOMENTS</p>
+    <h1>The world,<br>through my eyes.</h1>
+    <a href="#destinations">EXPLORE THE JOURNEY</a>
+  </div>
+</header>
+
+<section id="destinations">
+  <p class="eyebrow">THE TRAVEL COLLECTION</p>
+  <h2>Places that stay with me.</h2>
+  <p class="description">
+    From little streets in Europe to quiet corners by the sea.
+    A collection of places, people and moments worth remembering.
+  </p>
+
+  <div class="grid">
+    <article class="place">
+      <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=900" alt="Paris">
+      <h3>Paris, France</h3>
+      <p>FRANCE · EUROPE</p>
+    </article>
+    <article class="place">
+      <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900" alt="Mountains">
+      <h3>Into the Alps</h3>
+      <p>MOUNTAINS · NATURE</p>
+    </article>
+    <article class="place">
+      <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=900" alt="Italy">
+      <h3>Somewhere in Italy</h3>
+      <p>ITALY · EUROPE</p>
+    </article>
+  </div>
+</section>
+
+<section class="journal" id="journal">
+  <p class="eyebrow">NOTES FROM THE ROAD</p>
+  <h2>Travel journal.</h2>
+  <div class="story">
+    <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1000" alt="Lake and mountains">
+    <div>
+      <p class="eyebrow">A COLLECTION OF MEMORIES</p>
+      <h3>Somewhere between the journey and the destination.</h3>
+      <p>
+        Little discoveries, unexpected adventures, beautiful views
+        and all the stories that make travelling feel special.
+        This is where I keep them.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <p class="eyebrow">THE GIRL BEHIND THE JOURNAL</p>
+  <h2>Hello, I'm Firyal.</h2>
+  <p class="description">
+    A curious soul with a love for nature, new places,
+    beautiful landscapes and stories from around the world.
+    Here to collect moments, one journey at a time.
+  </p>
+</section>
+
+<footer>
+  FIRYAL TRAVELS · COLLECT MOMENTS, NOT JUST MILES · 2026
+</footer>
+
+</body>
+</html>
