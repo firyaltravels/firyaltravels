@@ -4,243 +4,458 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Firyal Travels — A Journal of Places</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<title>Firyal Travels — Notes From Somewhere</title>
+<meta name="description" content="A personal travel journal by Firyal. Places, stories and moments worth keeping.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 
 <style>
-* { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; }
+:root {
+  --paper:#f7f5ef;
+  --ink:#302e28;
+  --olive:#85866e;
+  --muted:#858177;
+  --line:#e4e0d6;
+}
+* {box-sizing:border-box;margin:0;padding:0}
+html {scroll-behavior:smooth}
 body {
-  background:#f8f6f0;
-  color:#302f29;
+  background:var(--paper);
+  color:var(--ink);
   font-family:'DM Sans',sans-serif;
 }
+a {color:inherit;text-decoration:none}
+.topline {
+  padding:11px;
+  text-align:center;
+  background:#e9e7dd;
+  font-size:9px;
+  letter-spacing:2px;
+  color:#68685b;
+}
 nav {
-  height:85px;
-  padding:0 7%;
+  min-height:85px;
+  padding:20px 7%;
   display:flex;
   align-items:center;
   justify-content:space-between;
+  gap:20px;
+  border-bottom:1px solid var(--line);
 }
 .logo {
   font-family:'Playfair Display',serif;
-  font-size:25px;
+  font-size:27px;
+  white-space:nowrap;
 }
-nav a {
-  text-decoration:none;
-  color:#302f29;
-  font-size:11px;
+.logo span {font-style:italic}
+.navlinks {display:flex;gap:28px;flex-wrap:wrap}
+.navlinks a {
+  font-size:10px;
   letter-spacing:1.5px;
-  margin-left:25px;
 }
-.hero {
-  margin:0 3%;
-  height:620px;
-  background:linear-gradient(#0003,#0004),
-  url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=2000') center/cover;
+.hero {padding:32px 4% 0}
+.hero-image {
+  min-height:620px;
+  background:
+    linear-gradient(90deg,rgba(31,31,26,.48),rgba(31,31,26,.08)),
+    linear-gradient(135deg,#85866e,#b5a993 55%,#d4cbb9);
   display:flex;
   align-items:center;
-  justify-content:center;
-  text-align:center;
+  padding:9%;
   color:white;
 }
-.hero p {
-  font-size:11px;
-  letter-spacing:5px;
-  margin-bottom:25px;
-}
-.hero h1 {
-  font-family:'Playfair Display',serif;
-  font-size:clamp(48px,8vw,92px);
-  font-weight:400;
-  line-height:1.1;
-}
-.hero a {
-  display:inline-block;
-  margin-top:35px;
-  padding:15px 30px;
-  border:1px solid white;
-  color:white;
-  text-decoration:none;
-  font-size:10px;
-  letter-spacing:2px;
-}
-section { padding:100px 9%; }
 .eyebrow {
-  color:#82836c;
+  color:var(--olive);
   font-size:10px;
   letter-spacing:3px;
-  margin-bottom:17px;
+  margin-bottom:18px;
+}
+.hero .eyebrow {color:#eee9df}
+.hero h1 {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(60px,9vw,105px);
+  font-weight:400;
+  line-height:1.04;
+}
+.hero-sub {
+  font-family:'Playfair Display',serif;
+  font-style:italic;
+  font-size:19px;
+  line-height:1.7;
+  margin-top:22px;
+}
+.outline-link {
+  display:inline-block;
+  border:1px solid white;
+  padding:15px 24px;
+  margin-top:32px;
+  font-size:9px;
+  letter-spacing:2px;
+}
+section {padding:90px 9%}
+.intro {
+  text-align:center;
+  padding:110px 12%;
 }
 h2 {
   font-family:'Playfair Display',serif;
-  font-size:45px;
+  font-size:clamp(37px,5vw,55px);
   font-weight:400;
-  margin-bottom:20px;
+  line-height:1.2;
 }
 .description {
-  max-width:580px;
-  color:#77766f;
-  line-height:1.9;
-  font-size:14px;
+  max-width:600px;
+  margin:22px auto 0;
+  font-size:13px;
+  color:var(--muted);
+  line-height:2;
 }
-.grid {
+.signature {
+  font-family:'Playfair Display',serif;
+  font-size:23px;
+  font-style:italic;
+  color:var(--olive);
+  margin-top:24px;
+}
+.featured {background:#eeece4}
+.featured-layout {
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:65px;
+  align-items:center;
+}
+.photo {
+  min-height:460px;
+  background:linear-gradient(145deg,#777d68,#b4a992,#ded5c5);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fffdf4;
+  font-family:'Playfair Display',serif;
+  font-size:19px;
+  font-style:italic;
+}
+.featured-copy h2 {font-size:48px}
+.meta {
+  color:var(--muted);
+  font-size:9px;
+  letter-spacing:2px;
+  margin:18px 0;
+}
+.featured-copy p.description {
+  margin:20px 0 0;
+}
+.text-link {
+  display:inline-block;
+  margin-top:30px;
+  padding-bottom:8px;
+  border-bottom:1px solid var(--ink);
+  font-size:10px;
+  letter-spacing:1.5px;
+}
+.section-head {
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:20px;
+  margin-bottom:38px;
+}
+.small-link {
+  font-size:10px;
+  letter-spacing:1.5px;
+  border-bottom:1px solid var(--ink);
+  padding-bottom:7px;
+}
+.journal-grid {
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:25px;
+}
+.story-card .photo {
+  min-height:320px;
+  transition:filter .3s;
+}
+.story-card:nth-child(2) .photo {
+  background:linear-gradient(145deg,#aaa18e,#77796d);
+}
+.story-card:nth-child(3) .photo {
+  background:linear-gradient(145deg,#c0ad94,#747866);
+}
+.story-card:hover .photo {filter:brightness(.9)}
+.story-card h3 {
+  font-family:'Playfair Display',serif;
+  font-weight:400;
+  font-size:25px;
+  line-height:1.3;
+}
+.story-card p:not(.meta) {
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.8;
+  margin-top:10px;
+}
+.destinations {background:#eeece4}
+.destination-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+.destination {
+  min-height:400px;
+  display:flex;
+  align-items:end;
+  padding:25px;
+  color:white;
+  background:linear-gradient(transparent,rgba(0,0,0,.5)),linear-gradient(140deg,#aaa38e,#777b69);
+}
+.destination:nth-child(2) {
+  background:linear-gradient(transparent,rgba(0,0,0,.5)),linear-gradient(140deg,#c4b69e,#85816f);
+}
+.destination:nth-child(3) {
+  background:linear-gradient(transparent,rgba(0,0,0,.5)),linear-gradient(140deg,#a9b0a0,#69745f);
+}
+.destination h3 {
+  font-family:'Playfair Display',serif;
+  font-size:34px;
+  font-weight:400;
+}
+.destination p {
+  font-size:9px;
+  letter-spacing:2px;
+  margin-top:7px;
+}
+.notes-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
   margin-top:45px;
 }
-.place img {
-  width:100%;
-  height:370px;
-  object-fit:cover;
-  display:block;
-  transition:transform .5s;
+.note {
+  border-top:1px solid #c9c5b9;
+  padding-top:20px;
 }
-.place { overflow:hidden; }
-.place img:hover { transform:scale(1.04); }
-.place h3 {
+.note-number {
   font-family:'Playfair Display',serif;
+  color:var(--olive);
   font-size:25px;
-  font-weight:400;
-  margin-top:18px;
 }
-.place p {
-  color:#88877f;
-  font-size:10px;
-  letter-spacing:2px;
-  margin-top:8px;
-}
-.journal {
-  background:#eeece4;
-}
-.story {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:50px;
-  align-items:center;
-  margin-top:40px;
-}
-.story img {
-  width:100%;
-  height:400px;
-  object-fit:cover;
-}
-.story h3 {
+.note h3 {
   font-family:'Playfair Display',serif;
-  font-size:32px;
   font-weight:400;
-  margin-bottom:18px;
+  font-size:24px;
+  margin:14px 0;
 }
-.story p {
-  color:#77766f;
-  font-size:14px;
+.note p {
+  font-size:12px;
+  color:var(--muted);
   line-height:1.9;
 }
 .about {
+  background:#e8e6dc;
   text-align:center;
+  padding:105px 15%;
 }
-.about .description {
-  margin:auto;
+.about p {
+  max-width:580px;
+  margin:22px auto;
+  color:#77766e;
+  font-size:13px;
+  line-height:2;
 }
 footer {
-  text-align:center;
-  padding:40px 15px;
-  border-top:1px solid #e5e2d9;
-  font-size:10px;
-  letter-spacing:2px;
-  color:#77766f;
+  padding:35px 7%;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  font-size:9px;
+  color:var(--muted);
+  letter-spacing:1.5px;
 }
 @media(max-width:700px) {
-  nav { padding:0 5%; height:75px; }
-  .logo { font-size:20px; }
-  nav a { margin-left:10px; font-size:9px; }
-  .hero { height:480px; margin:0 2%; }
-  section { padding:70px 7%; }
-  h2 { font-size:36px; }
-  .grid { grid-template-columns:1fr; gap:35px; }
-  .place img { height:330px; }
-  .story { grid-template-columns:1fr; gap:25px; }
-  .story img { height:300px; }
+  nav {align-items:flex-start;flex-direction:column}
+  .navlinks {gap:15px}
+  .navlinks a {font-size:9px}
+  .hero {padding:15px 3% 0}
+  .hero-image {min-height:490px;padding:7%}
+  section {padding:70px 7%}
+  .intro {padding:75px 7%}
+  .featured-layout {grid-template-columns:1fr;gap:25px}
+  .photo {min-height:330px}
+  .featured-copy h2 {font-size:39px}
+  .section-head {align-items:flex-start;flex-direction:column}
+  .journal-grid,.destination-grid,.notes-grid {grid-template-columns:1fr}
+  .destination {min-height:330px}
+  .about {padding:75px 8%}
+  footer {flex-direction:column;text-align:center}
 }
 </style>
 </head>
 
 <body>
 
+<div class="topline">
+A PERSONAL COLLECTION OF PLACES, PEOPLE & MOMENTS
+</div>
+
 <nav>
-  <div class="logo">Firyal Travels.</div>
-  <div>
-    <a href="#destinations">PLACES</a>
+  <a href="#" class="logo">Firyal <span>Travels.</span></a>
+  <div class="navlinks">
     <a href="#journal">JOURNAL</a>
+    <a href="#destinations">DESTINATIONS</a>
+    <a href="#notes">TRAVEL NOTES</a>
     <a href="#about">ABOUT</a>
   </div>
 </nav>
 
 <header class="hero">
-  <div>
-    <p>A LITTLE JOURNAL OF PLACES & MOMENTS</p>
-    <h1>The world,<br>through my eyes.</h1>
-    <a href="#destinations">EXPLORE THE JOURNEY</a>
+  <div class="hero-image">
+    <div>
+      <p class="eyebrow">A JOURNAL BY FIRYAL</p>
+      <h1>Notes from<br>somewhere.</h1>
+      <p class="hero-sub">
+        Places I've been. Stories I've lived.<br>
+        Moments worth keeping.
+      </p>
+      <a href="#journal" class="outline-link">EXPLORE THE JOURNAL ↗</a>
+    </div>
   </div>
 </header>
 
-<section id="destinations">
-  <p class="eyebrow">THE TRAVEL COLLECTION</p>
-  <h2>Places that stay with me.</h2>
+<section class="intro">
+  <p class="eyebrow">A LITTLE INTRODUCTION</p>
+  <h2>For the love of getting<br>lost somewhere beautiful.</h2>
   <p class="description">
-    From little streets in Europe to quiet corners by the sea.
-    A collection of places, people and moments worth remembering.
+    A personal archive of journeys, photographs and little discoveries.
+    From unfamiliar streets to quiet landscapes, this is where I keep
+    the stories that make travelling feel like something more.
   </p>
+  <div class="signature">With love, Firyal.</div>
+</section>
 
-  <div class="grid">
-    <article class="place">
-      <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=900" alt="Paris">
-      <h3>Paris, France</h3>
-      <p>FRANCE · EUROPE</p>
+<section class="featured">
+  <div class="featured-layout">
+    <div class="photo">Featured photograph</div>
+    <div class="featured-copy">
+      <p class="eyebrow">THE FIRST JOURNAL · 001</p>
+      <h2>From Surabaya<br>to Paris.</h2>
+      <p class="meta">OCTOBER 2026 · FRANCE</p>
+      <p class="description">
+        Every journey has a beginning. Mine started in Surabaya,
+        crossed a few airports, included an unexpected stop in
+        Jeddah, and eventually brought me to France.
+        The destination was Paris, but the journey itself
+        had plenty of stories to tell.
+      </p>
+      <a href="#journal" class="text-link">DISCOVER THE JOURNEY ↗</a>
+    </div>
+  </div>
+</section>
+
+<section id="journal">
+  <div class="section-head">
+    <div>
+      <p class="eyebrow">THE STORIES</p>
+      <h2>Travel journal.</h2>
+    </div>
+    <a href="#featured" class="small-link">EXPLORE STORIES ↗</a>
+  </div>
+
+  <div class="journal-grid" id="featured">
+    <article class="story-card">
+      <div class="photo">The departure</div>
+      <p class="meta">01 · SURABAYA</p>
+      <h3>Before the journey began.</h3>
+      <p>Leaving home, the airport, and everything that comes before take-off.</p>
     </article>
-    <article class="place">
-      <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900" alt="Mountains">
-      <h3>Into the Alps</h3>
-      <p>MOUNTAINS · NATURE</p>
+    <article class="story-card">
+      <div class="photo">An unexpected stop</div>
+      <p class="meta">02 · JEDDAH</p>
+      <h3>A little detour in Jeddah.</h3>
+      <p>An unexpected chapter, a meaningful stop, and a journey beyond the itinerary.</p>
     </article>
-    <article class="place">
-      <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=900" alt="Italy">
-      <h3>Somewhere in Italy</h3>
-      <p>ITALY · EUROPE</p>
+    <article class="story-card">
+      <div class="photo">Bonjour, Paris</div>
+      <p class="meta">03 · FRANCE</p>
+      <h3>Finally, in Paris.</h3>
+      <p>First impressions, beautiful streets, and the feeling of finally arriving.</p>
     </article>
   </div>
 </section>
 
-<section class="journal" id="journal">
-  <p class="eyebrow">NOTES FROM THE ROAD</p>
-  <h2>Travel journal.</h2>
-  <div class="story">
-    <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1000" alt="Lake and mountains">
+<section class="destinations" id="destinations">
+  <div class="section-head">
     <div>
-      <p class="eyebrow">A COLLECTION OF MEMORIES</p>
-      <h3>Somewhere between the journey and the destination.</h3>
-      <p>
-        Little discoveries, unexpected adventures, beautiful views
-        and all the stories that make travelling feel special.
-        This is where I keep them.
-      </p>
+      <p class="eyebrow">THE PLACES</p>
+      <h2>Somewhere in the world.</h2>
     </div>
+    <p class="meta">A GROWING COLLECTION OF MEMORIES</p>
+  </div>
+
+  <div class="destination-grid">
+    <article class="destination">
+      <div>
+        <h3>Paris</h3>
+        <p>FRANCE · EUROPE</p>
+      </div>
+    </article>
+    <article class="destination">
+      <div>
+        <h3>Normandy</h3>
+        <p>FRANCE · THE COAST</p>
+      </div>
+    </article>
+    <article class="destination">
+      <div>
+        <h3>Annecy</h3>
+        <p>FRANCE · THE ALPS</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="notes">
+  <p class="eyebrow">THE PRACTICAL SIDE OF TRAVEL</p>
+  <h2>Notes worth sharing.</h2>
+  <p class="description" style="margin-left:0">
+    The little details that make a journey easier.
+    Real experiences, useful discoveries, and things I wish I knew before going.
+  </p>
+
+  <div class="notes-grid">
+    <article class="note">
+      <span class="note-number">01</span>
+      <h3>Itineraries & Routes</h3>
+      <p>Day-by-day plans, transport connections and places worth adding to your list.</p>
+    </article>
+    <article class="note">
+      <span class="note-number">02</span>
+      <h3>Travel Budgets</h3>
+      <p>Actual expenses, accommodation, tickets and everyday costs from the road.</p>
+    </article>
+    <article class="note">
+      <span class="note-number">03</span>
+      <h3>Little Travel Tips</h3>
+      <p>Lessons, practical discoveries and the occasional things that didn't go as planned.</p>
+    </article>
   </div>
 </section>
 
 <section class="about" id="about">
   <p class="eyebrow">THE GIRL BEHIND THE JOURNAL</p>
   <h2>Hello, I'm Firyal.</h2>
-  <p class="description">
-    A curious soul with a love for nature, new places,
-    beautiful landscapes and stories from around the world.
-    Here to collect moments, one journey at a time.
+  <p>
+    A curious soul drawn to nature, unfamiliar streets,
+    beautiful landscapes and the stories people carry.
+    I made this little corner of the internet to document
+    the places I go and the moments I don't want to forget.
+    Not every journey is perfect, and that's part of the beauty.
   </p>
+  <div class="signature">See you somewhere, Firyal.</div>
 </section>
 
 <footer>
-  FIRYAL TRAVELS · COLLECT MOMENTS, NOT JUST MILES · 2026
+  <span>© 2026 FIRYAL TRAVELS</span>
+  <span>MADE OF STORIES & LITTLE MOMENTS</span>
+  <a href="#">BACK TO TOP ↑</a>
 </footer>
 
 </body>
